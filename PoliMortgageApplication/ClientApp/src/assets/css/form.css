@@ -13,3 +13,11 @@
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
+.mortgage-radio-questions .ng-valid[required], .ng-valid.required {
+  border-left: none;
+}
+
+.mortgage-radio-questions .ng-invalid:not(form) {
+  border-left: none; 
+}

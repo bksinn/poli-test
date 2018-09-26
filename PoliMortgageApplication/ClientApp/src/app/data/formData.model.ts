@@ -2,8 +2,12 @@ export class FormData {
     firstName: string = '';
     lastName : string = '';
     email: string = '';
+    typeOfLoan: string = '';
+    homeDescription: string = '';
+
     work: string = '';
     street: string = '';
+
     city: string = '';
     state: string = '';
     zip: string = '';
@@ -24,6 +28,8 @@ export class Personal {
     firstName: string = '';
     lastName : string = '';
     email: string = '';
+    typeOfLoan: string = '';
+    homeDescription: string = '';
 }
 
 export class Address {

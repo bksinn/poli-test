@@ -3,6 +3,7 @@ import { Injectable }                        from '@angular/core';
 import { FormData, Personal, Address }       from './formData.model';
 import { WorkflowService } from '../workflow/workflow.service';
 import { STEPS } from '../workflow/workflow.model';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 
 @Injectable()
 export class FormDataService {
@@ -20,7 +21,9 @@ export class FormDataService {
         var personal: Personal = {
             firstName: this.formData.firstName,
             lastName: this.formData.lastName,
-            email: this.formData.email
+            email: this.formData.email,
+            typeOfLoan: this.formData.typeOfLoan,
+            homeDescription: this.formData.homeDescription
         };
         return personal;
     }
@@ -31,6 +34,8 @@ export class FormDataService {
         this.formData.firstName = data.firstName;
         this.formData.lastName = data.lastName;
         this.formData.email = data.email;
+        this.formData.typeOfLoan = data.typeOfLoan;
+        this.formData.homeDescription = data.homeDescription;
         // Validate Personal Step in Workflow
         this.workflowService.validateStep(STEPS.personal);
     }

@@ -4,7 +4,7 @@
         <br/>
         <div class='row'>
             <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
-                <div class="row">
+                <!--<div class="row">
                     <div class='col-xs-12 col-sm-6'>
                         <div class="form-group">
                             <label class="control-label" for="firstname">First Name</label>  
@@ -24,6 +24,14 @@
                     <label class="control-label" for="email">Email</label>
                     <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email" [(ngModel)]="personal.email">
                     <div class="alert alert-danger" [hidden]="email.valid">Email is required and must be valid</div>
+                </div>-->
+                <div class="form-group">
+                  <label class="control-label" for="test">Please select something</label>
+                  <mat-radio-group class="radio-group">
+                    <mat-radio-button value="1">Option 1</mat-radio-button>
+                    <mat-radio-button value="2">Option 2</mat-radio-button>
+                  </mat-radio-group>
+
                 </div>
                     
                 <div class="form-group text-center">

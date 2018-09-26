@@ -19,10 +19,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormDataService } from './data/formData.service';
 import { WorkflowService } from './workflow/workflow.service';
 
+/* Angular Material Imports */
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatRadioModule } from '@angular/material/radio';
+
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MatRadioModule,
     AppRoutingModule
   ],
   providers: [

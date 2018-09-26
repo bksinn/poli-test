@@ -67,3 +67,36 @@
 .iradio_buttons.checked {
     background-position: -168px 0;
 }
+
+/*Custom styles for Angular Material Radio Buttons*/
+.mat-radio-button ~ .mat-radio-button {
+  padding-right: 16px;
+}
+
+.mat-radio-group {
+  display: block;
+}
+
+.mat-radio-button {
+  background-color: rgba(239, 239, 233, 0.5);
+  display: block!important;
+  padding: 10px;
+  margin: 3px;
+}
+
+.mat-radio-checked {
+  background-color: #42A948;
+}
+
+.mat-radio-label {
+  width: 100%;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+  background-color: #333;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #333;
+}
+

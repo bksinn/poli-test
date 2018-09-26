@@ -32,8 +32,8 @@ export class WorkComponent implements OnInit {
 
     goToPrevious(form: any) {
         if (this.save(form)) {
-            // Navigate to the personal page
-            this.router.navigate(['/personal']);
+            // Navigate to the mortgagesection01 page
+            this.router.navigate(['/mortgagesection01']);
         }
     }
 

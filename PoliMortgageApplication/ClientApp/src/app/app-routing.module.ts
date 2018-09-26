@@ -1,7 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PersonalComponent }    from './personal/personal.component';
+import { MortgageSection01 }    from './mortgagesection01/mortgagesection01.component';
 import { WorkComponent }        from './work/work.component';
 import { AddressComponent }     from './address/address.component';
 import { ResultComponent }      from './result/result.component';
@@ -12,7 +12,7 @@ import { WorkflowService }      from './workflow/workflow.service';
 
 export const appRoutes: Routes = [
     // 1st Route
-    { path: 'personal',  component: PersonalComponent },
+    { path: 'mortgagesection01',  component: MortgageSection01 },
     // 2nd Route
     { path: 'work',  component: WorkComponent, canActivate: [WorkflowGuard] },
     // 3rd Route
@@ -20,9 +20,9 @@ export const appRoutes: Routes = [
     // 4th Route
     { path: 'result',  component: ResultComponent, canActivate: [WorkflowGuard] },
     // 5th Route
-    { path: '',   redirectTo: '/personal', pathMatch: 'full' },
+    { path: '',   redirectTo: '/mortgagesection01', pathMatch: 'full' },
     // 6th Route
-    { path: '**', component: PersonalComponent }
+    { path: '**', component: MortgageSection01 }
 ];
 
 @NgModule({

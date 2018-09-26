@@ -68,8 +68,12 @@
     background-position: -168px 0;
 }
 
-label.control-label {
+label {
   font-weight: 500;
+}
+
+label.control-label {
+  font-weight: 700;
 }
 
 /*Custom styles for Angular Material Radio Buttons*/
@@ -84,6 +88,7 @@ label.control-label {
 .mat-radio-button {
   background-color: rgba(239, 239, 233, 0.5);
   display: block!important;
+  width: 45%;
   padding: 10px;
   margin: 3px;
 }
@@ -94,6 +99,7 @@ label.control-label {
 
 .mat-radio-label {
   width: 100%;
+  height: 50px;
 }
 
 .mat-radio-button.mat-accent .mat-radio-inner-circle {
@@ -104,3 +110,12 @@ label.control-label {
   border-color: rgba(239, 239, 233, 0.9);
 }
 
+.mat-form-field {
+  width: 92%;
+}
+
+@media (max-width: 993px) {
+  .mat-radio-button, .mat-form-field {
+    width: 100%;
+  }
+}

@@ -1,0 +1,124 @@
+<form #mortgagesection01Form="ngForm" class="editForm" novalidate>
+    <div class="tab-pane fade in active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br/>
+        <div class='row mortgage-radio-questions'>
+          <div class='col-xs-offset-1 col-xs-10'>
+            <!--<div class="row">
+      <div class='col-xs-12 col-sm-6'>
+          <div class="form-group">
+              <label class="control-label" for="firstname">First Name</label>
+              <input class="form-control input-md" #firstname="ngModel" required id="firstname" name="firstname" type="text" placeholder="First Name" [(ngModel)]="mortgagesection01.firstName">
+              <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert alert-danger" [hidden]="firstname.valid">First Name is required</div>
+          </div>
+      </div>
+      <div class='col-xs-12 col-sm-6'>
+          <div class="form-group">
+              <label class="control-label" for="lastname">Last Name</label>
+              <input class="form-control input-md" #lastname="ngModel" required id="lastname" name="lastname" type="text" placeholder="Last Name" [(ngModel)]="mortgagesection01.lastName">
+              <div class="alert alert-danger" [hidden]="lastname.valid">Last Name is required</div>
+          </div>
+      </div>
+  </div>
+  <div class="form-group">
+      <label class="control-label" for="email">Email</label>
+      <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email" [(ngModel)]="mortgagesection01.email">
+      <div class="alert alert-danger" [hidden]="email.valid">Email is required and must be valid</div>
+  </div>-->
+
+            <div class="form-group">
+              <!--<label class="control-label" for="zip">What's your zipcode?</label>-->
+              <mat-form-field>
+                <input matInput
+                        #zipCode="ngModel"
+                        name="zipCode"
+                        id="user-zipcode"
+                        required
+                        validateZip
+                        apiCall
+                        [(ngModel)]="mortgagesection01.zipCode"
+                        placeholder="Enter your zipcode">
+              </mat-form-field>
+
+              <div class="alert alert-danger" *ngIf="zipCode.invalid && (zipCode.dirty || zipCode.touched)" [hidden]="zipCode.valid">
+                <div *ngIf="zipCode.errors.required">This field is required</div>
+                <div *ngIf="zipCode.invalid">Please provide a valid 5 digit zip code</div>
+              </div>
+              <!--<div *ngIf="zipCodeLoading" class="ellipsis">
+                <img class="loading-ellipsis" src="assets/images/loading-ellipsis.svg" alt="Loading Animation">
+              </div>-->
+            </div>
+            <div class="form-group">
+              <label class="control-label" for="typeOfLoan">Type Of Loan</label>
+              <mat-radio-group required #typeOfLoan="ngModel" class="radio-group" [(ngModel)]="mortgagesection01.typeOfLoan" name="typeOfLoan">
+                <mat-radio-button value="Home Purchase">Home Purchase</mat-radio-button>
+                <mat-radio-button value="Home Refinance">Home Refinance</mat-radio-button>
+              </mat-radio-group>
+              <div *ngIf="typeOfLoan.invalid && (typeOfLoan.dirty || typeOfLoan.touched)" class="alert alert-danger" [hidden]="typeOfLoan.valid">
+                This is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label" for="homeDescription">Home Description</label>
+              <mat-radio-group required #homeDescription="ngModel" class="radio-group" [(ngModel)]="mortgagesection01.homeDescription" name="homeDescription">
+                <mat-radio-button value="Single Family">Single Family</mat-radio-button>
+                <mat-radio-button value="Multi-Family">Multi-Family</mat-radio-button>
+                <mat-radio-button value="Condominum">Condominum</mat-radio-button>
+                <mat-radio-button value="Townhouse">Townhouse</mat-radio-button>
+              </mat-radio-group>
+              <div *ngIf="homeDescription.invalid && (homeDescription.dirty || homeDescription.touched)" class="alert alert-danger" [hidden]="homeDescription.valid">
+                This is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label" for="creditProfile">Credit Profile</label>
+              <mat-radio-group required #creditProfile="ngModel" class="radio-group" [(ngModel)]="mortgagesection01.creditProfile" name="creditProfile">
+                <mat-radio-button value="Excellent--720 and above">Excellent--720 and above</mat-radio-button>
+                <mat-radio-button value="Good--660 - 719">Good--660 - 719</mat-radio-button>
+                <mat-radio-button value="Average--620 - 659">Average--620 - 659</mat-radio-button>
+                <mat-radio-button value="Below Average--580 - 619">Below Average--580 - 619</mat-radio-button>
+                <mat-radio-button value="Poor--579 and below">Poor--579 and below</mat-radio-button>
+              </mat-radio-group>
+              <div *ngIf="creditProfile.invalid && (creditProfile.dirty || creditProfile.touched)" class="alert alert-danger" [hidden]="creditProfile.valid">
+                This is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label" for="propertyUse">Property Use</label>
+              <mat-radio-group required #propertyUse="ngModel" class="radio-group" [(ngModel)]="mortgagesection01.propertyUse" name="propertyUse">
+                <mat-radio-button value="Primary Residence">Primary Residence</mat-radio-button>
+                <mat-radio-button value="Second Home">Second Home</mat-radio-button>
+                <mat-radio-button value="Investment Property">Investment Property</mat-radio-button>
+              </mat-radio-group>
+              <div *ngIf="propertyUse.invalid && (propertyUse.dirty || propertyUse.touched)" class="alert alert-danger" [hidden]="propertyUse.valid">
+                This is required
+              </div>
+            </div>
+
+
+            <div class="form-group text-center">
+              <button class="btn btn-success btn-outline-rounded btn-info" [disabled]="!mortgagesection01Form.valid" (click)="goToNext(mortgagesection01Form)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+          </div>
+        </div>
+    </div>
+</form>
+
+
+<!-- Template -->
+<!--<div class="form-group">
+  <label class="control-label" for="propertyUse">Property Use</label>
+  <mat-radio-group required #propertyUse="ngModel" class="radio-group" [(ngModel)]="mortgagesection01.propertyUse" name="propertyUse">
+    <mat-radio-button value=""></mat-radio-button>
+    <mat-radio-button value=""></mat-radio-button>
+    <mat-radio-button value=""></mat-radio-button>
+    <mat-radio-button value=""></mat-radio-button>
+    <mat-radio-button value=""></mat-radio-button>
+  </mat-radio-group>
+  <div *ngIf="propertyUse.invalid && (propertyUse.dirty || propertyUse.touched)" class="alert alert-danger" [hidden]="propertyUse.valid">
+    This is required
+  </div>
+</div>-->

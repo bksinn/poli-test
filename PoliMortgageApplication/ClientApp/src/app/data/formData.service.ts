@@ -1,6 +1,6 @@
 import { Injectable }                        from '@angular/core';
 
-import { FormData, Personal, Address }       from './formData.model';
+import { FormData, Mortgagesection01, Address }       from './formData.model';
 import { WorkflowService } from '../workflow/workflow.service';
 import { STEPS } from '../workflow/workflow.model';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
@@ -9,35 +9,41 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
 export class FormDataService {
 
     private formData: FormData = new FormData();
-    private isPersonalFormValid: boolean = false;
+    private ismortgagesection01FormValid: boolean = false;
     private isWorkFormValid: boolean = false;
     private isAddressFormValid: boolean = false;
 
     constructor(private workflowService: WorkflowService) { 
     }
 
-    getPersonal(): Personal {
-        // Return the Personal data
-        var personal: Personal = {
+    getmortgagesection01(): Mortgagesection01 {
+        // Return the mortgagesection01 data
+        var mortgagesection01: Mortgagesection01 = {
             firstName: this.formData.firstName,
             lastName: this.formData.lastName,
             email: this.formData.email,
             typeOfLoan: this.formData.typeOfLoan,
-            homeDescription: this.formData.homeDescription
+            homeDescription: this.formData.homeDescription,
+            creditProfile: this.formData.creditProfile,
+            propertyUse: this.formData.propertyUse,
+            zipCode: this.formData.zipCode
         };
-        return personal;
+        return mortgagesection01;
     }
 
-    setPersonal(data: Personal) {
-        // Update the Personal data only when the Personal Form had been validated successfully
-        this.isPersonalFormValid = true;
+    setmortgagesection01(data: Mortgagesection01) {
+        // Update the mortgagesection01 data only when the mortgagesection01 Form had been validated successfully
+        this.ismortgagesection01FormValid = true;
         this.formData.firstName = data.firstName;
         this.formData.lastName = data.lastName;
         this.formData.email = data.email;
         this.formData.typeOfLoan = data.typeOfLoan;
         this.formData.homeDescription = data.homeDescription;
-        // Validate Personal Step in Workflow
-        this.workflowService.validateStep(STEPS.personal);
+        this.formData.creditProfile = data.creditProfile;
+        this.formData.propertyUse = data.propertyUse;
+        this.formData.zipCode = data.zipCode;
+        // Validate mortgagesection01 Step in Workflow
+        this.workflowService.validateStep(STEPS.mortgagesection01);
     }
 
     getWork() : string {
@@ -85,12 +91,12 @@ export class FormDataService {
         this.workflowService.resetSteps();
         // Return the form data after all this.* members had been reset
         this.formData.clear();
-        this.isPersonalFormValid = this.isWorkFormValid = this.isAddressFormValid = false;
+        this.ismortgagesection01FormValid = this.isWorkFormValid = this.isAddressFormValid = false;
         return this.formData;
     }
 
     isFormValid() {
         // Return true if all forms had been validated successfully; otherwise, return false
-      return this.isPersonalFormValid && this.isWorkFormValid && this.isAddressFormValid;
+      return this.ismortgagesection01FormValid && this.isWorkFormValid && this.isAddressFormValid;
     }
 }

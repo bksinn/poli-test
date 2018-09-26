@@ -2,8 +2,12 @@ export class FormData {
     firstName: string = '';
     lastName : string = '';
     email: string = '';
+
     typeOfLoan: string = '';
     homeDescription: string = '';
+    creditProfile: string = '';
+    propertyUse: string = '';
+    zipCode: string = '';
 
     work: string = '';
     street: string = '';
@@ -24,12 +28,16 @@ export class FormData {
     }
 }
 
-export class Personal {
+export class Mortgagesection01 {
     firstName: string = '';
     lastName : string = '';
     email: string = '';
+
     typeOfLoan: string = '';
     homeDescription: string = '';
+    creditProfile: string = '';
+    propertyUse: string = '';
+    zipCode: string = '';
 }
 
 export class Address {

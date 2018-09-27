@@ -27,13 +27,23 @@ export class MortgageSection01 implements OnInit {
     }
 
     ngOnInit() {
-        this.mortgagesection01 = this.formDataService.getmortgagesection01();
-        console.log('mortgagesection01 feature loaded!');
+      this.mortgagesection01 = this.formDataService.getmortgagesection01();
+      console.log('mortgagesection01 feature loaded!');
+      console.log("form valid? " + this.formDataService.ismortgagesection01FormValid);
 
+      //Makes all questions visible if they've already been answered => adds class 'visible', which has opacity of 1
+      if (this.formDataService.ismortgagesection01FormValid) {
+        let list;
+        list = document.querySelectorAll('div.transparent');
+        for (let i = 0; i < list.length; ++i) {
+          list[i].classList.add('visible');
+        }
+      }
     } 
 
     scrollToElement($element): void {
-      console.log($element);
+      //console.log($element);
+      $element.classList.add('visible');
       $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
     }
 

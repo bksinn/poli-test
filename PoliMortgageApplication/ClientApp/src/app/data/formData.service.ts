@@ -9,7 +9,7 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
 export class FormDataService {
 
     private formData: FormData = new FormData();
-    private ismortgagesection01FormValid: boolean = false;
+    public ismortgagesection01FormValid: boolean = false;
     private isWorkFormValid: boolean = false;
     private isAddressFormValid: boolean = false;
 

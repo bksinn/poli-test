@@ -119,3 +119,15 @@ label.control-label {
     width: 100%;
   }
 }
+
+.transparent {
+  opacity: 0.1;
+}
+
+.visible {
+  opacity: 1!important;
+}
+
+.visible label.control-label {
+  font-size: 25px;
+}

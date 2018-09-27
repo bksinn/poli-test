@@ -2,12 +2,27 @@ export class FormData {
     firstName: string = '';
     lastName : string = '';
     email: string = '';
+    phoneNumber: string = '';
 
     typeOfLoan: string = '';
     homeDescription: string = '';
     creditProfile: string = '';
     propertyUse: string = '';
     zipCode: string = '';
+    firstTimeBuyer: string = '';
+    planToPurchaseWhen: string = '';
+    homeIsUsedFor: string = '';
+    purchasePrice: string = '';
+    estimatedDownPayment: string = '';
+    desiredRate: string = '';
+    employmentStatus: string = '';
+    latePaymentsInLastTwelveMonths: string = '';
+    bankruptcyInLastThreeYears: string = '';
+    foreclosureInLastThreeYears: string = '';
+    proofOfIncome: string = '';
+    activeOrPreviousMilitary: string = '';
+    wantContactFromRealEstateAgent: string = '';
+
 
     work: string = '';
     street: string = '';
@@ -32,12 +47,27 @@ export class Mortgagesection01 {
     firstName: string = '';
     lastName : string = '';
     email: string = '';
+    phoneNumber: string = '';
 
     typeOfLoan: string = '';
     homeDescription: string = '';
     creditProfile: string = '';
     propertyUse: string = '';
     zipCode: string = '';
+
+    firstTimeBuyer: string = '';
+    planToPurchaseWhen: string = '';
+    homeIsUsedFor: string = '';
+    purchasePrice: string = '';
+    estimatedDownPayment: string = '';
+    desiredRate: string = '';
+    employmentStatus: string = '';
+    latePaymentsInLastTwelveMonths: string = '';
+    bankruptcyInLastThreeYears: string = '';
+    foreclosureInLastThreeYears: string = '';
+    proofOfIncome: string = '';
+    activeOrPreviousMilitary: string = '';
+    wantContactFromRealEstateAgent: string = '';
 }
 
 export class Address {

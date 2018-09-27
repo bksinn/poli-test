@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 import { Mortgagesection01 } from '../data/formData.model';
 import { FormDataService } from '../data/formData.service';
@@ -16,6 +16,7 @@ export class MortgageSection01 implements OnInit {
     apiRoot: string = "https://www.pingyo.com/find/locales/zipcode/";
     response: Array<any> = [];
     zipCodeLoading: boolean = false;
+    testString: string = 'test';
 
     
   constructor(
@@ -28,6 +29,12 @@ export class MortgageSection01 implements OnInit {
     ngOnInit() {
         this.mortgagesection01 = this.formDataService.getmortgagesection01();
         console.log('mortgagesection01 feature loaded!');
+
+    } 
+
+    scrollToElement($element): void {
+      console.log($element);
+      $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
     }
 
     //For US

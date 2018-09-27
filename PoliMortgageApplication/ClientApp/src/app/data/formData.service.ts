@@ -1,6 +1,6 @@
-import { Injectable }                        from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { FormData, Mortgagesection01, Address }       from './formData.model';
+import { FormData, Mortgagesection01, Address } from './formData.model';
 import { WorkflowService } from '../workflow/workflow.service';
 import { STEPS } from '../workflow/workflow.model';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
@@ -22,11 +22,25 @@ export class FormDataService {
             firstName: this.formData.firstName,
             lastName: this.formData.lastName,
             email: this.formData.email,
+            phoneNumber: this.formData.phoneNumber,
             typeOfLoan: this.formData.typeOfLoan,
             homeDescription: this.formData.homeDescription,
             creditProfile: this.formData.creditProfile,
             propertyUse: this.formData.propertyUse,
-            zipCode: this.formData.zipCode
+            zipCode: this.formData.zipCode,
+            firstTimeBuyer: this.formData.firstTimeBuyer,
+            planToPurchaseWhen: this.formData.planToPurchaseWhen,
+            homeIsUsedFor: this.formData.homeIsUsedFor,
+            purchasePrice: this.formData.purchasePrice,
+            estimatedDownPayment: this.formData.estimatedDownPayment,
+            desiredRate: this.formData.desiredRate,
+            employmentStatus: this.formData.employmentStatus,
+            latePaymentsInLastTwelveMonths: this.formData.latePaymentsInLastTwelveMonths,
+            bankruptcyInLastThreeYears: this.formData.bankruptcyInLastThreeYears,
+            foreclosureInLastThreeYears: this.formData.foreclosureInLastThreeYears,
+            proofOfIncome: this.formData.proofOfIncome,
+            activeOrPreviousMilitary: this.formData.activeOrPreviousMilitary,
+            wantContactFromRealEstateAgent: this.formData.wantContactFromRealEstateAgent
         };
         return mortgagesection01;
     }
@@ -37,11 +51,25 @@ export class FormDataService {
         this.formData.firstName = data.firstName;
         this.formData.lastName = data.lastName;
         this.formData.email = data.email;
+        this.formData.phoneNumber = data.phoneNumber;
         this.formData.typeOfLoan = data.typeOfLoan;
         this.formData.homeDescription = data.homeDescription;
         this.formData.creditProfile = data.creditProfile;
         this.formData.propertyUse = data.propertyUse;
         this.formData.zipCode = data.zipCode;
+        this.formData.firstTimeBuyer = data.firstTimeBuyer;
+        this.formData.planToPurchaseWhen = data.planToPurchaseWhen;
+        this.formData.homeIsUsedFor = data.homeIsUsedFor;
+        this.formData.purchasePrice = data.purchasePrice;
+        this.formData.estimatedDownPayment = data.estimatedDownPayment;
+        this.formData.desiredRate = data.desiredRate;
+        this.formData.employmentStatus = data.employmentStatus;
+        this.formData.latePaymentsInLastTwelveMonths = data.latePaymentsInLastTwelveMonths;
+        this.formData.bankruptcyInLastThreeYears = data.bankruptcyInLastThreeYears;
+        this.formData.foreclosureInLastThreeYears = data.foreclosureInLastThreeYears;
+        this.formData.proofOfIncome = data.proofOfIncome;
+        this.formData.activeOrPreviousMilitary = data.activeOrPreviousMilitary;
+        this.formData.wantContactFromRealEstateAgent = data.wantContactFromRealEstateAgent;
         // Validate mortgagesection01 Step in Workflow
         this.workflowService.validateStep(STEPS.mortgagesection01);
     }
